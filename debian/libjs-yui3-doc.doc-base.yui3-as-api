@@ -1,9 +1,0 @@
-Document: yui3-as-api
-Title: YUI Flash component documentation
-Author: Yahoo! Inc.
-Abstract: ActionScript class reference for YUI v3 Flash components.
-Section: Programming
-
-Format: HTML
-Index: /usr/share/doc/libjs-yui3-doc/as-api/index.html
-Files: /usr/share/doc/libjs-yui3-doc/as-api/*.html
