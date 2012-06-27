@@ -1,4 +1,4 @@
 version=3
-opts=dversionmangle=s/\+dfsg// \
+opts=dversionmangle=s/\.dfsg// \
 http://yuilibrary.com/download/yui3/ \
 	http://yui.zenfs.com/releases/yui3/yui_([\d\.]*).zip
