@@ -1,0 +1,7 @@
+Upstream distributes a zip archive, so you need to repackage it to .tar.gz:
+
+uscan --repack --rename
+
+Afterwards import the new upstream tarball:
+
+git-import-orig --pristine-tar ../yui3_3.1.0.orig.tar.gz

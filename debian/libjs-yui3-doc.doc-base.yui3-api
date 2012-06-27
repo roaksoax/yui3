@@ -1,0 +1,9 @@
+Document: yui3-api
+Title: YUI API documentation
+Author: Yahoo! Inc.
+Abstract: Explains how to use the Yahoo! User Interface Library v3 in your own web sites.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libjs-yui3-doc/index.html
+Files: /usr/share/doc/libjs-yui3-doc/*.html

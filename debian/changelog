@@ -1,0 +1,5 @@
+yui3 (3.5.1+dfsg-1) unstable; urgency=low
+
+  * Initial upload.  (Closes: #554431)
+
+ -- Jaldhar H. Vyas <jaldhar@debian.org>  Wed, 20 Jun 2012 14:33:45 -0400

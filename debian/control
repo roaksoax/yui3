@@ -1,0 +1,81 @@
+Source: yui3
+Section: web
+Priority: optional
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Jaldhar H. Vyas <jaldhar@debian.org>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.3
+Homepage: http://developer.yahoo.com/yui/3/
+Vcs-Browser: http://git.debian.org/?p=pkg-javascript/yui3.git
+Vcs-Git: git://git.debian.org/git/pkg-javascript/yui3.git
+DM-Upload-Allowed: yes
+
+Package: libjs-yui3-common
+Section: web
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: javascript-common
+Description: Yahoo User Interface Library v3 (common files)
+ A collection of JavaScript and CSS resources that make it easier to build 
+ richly interactive applications in web browsers.   The library currently 
+ includes:
+ .
+  * utility classes for animation, browser history, AJAX, cookies, caching
+    drag and drop. safe cross-site data retrieval, dynamic script/css loading,
+    image loading, selectors, JSON, internationalization, DOM and browser 
+    events, and more.
+  * Slider, overlay and tabview widgets.
+  * A logging framework.
+  * A profiler
+  * A test framework
+  * Cascading stylesheets for browser-independent grids and fonts.
+ .
+ This package contains images, css files and other assets which are used by
+ the min, debug, and full packages.
+
+Package: libjs-yui3-debug
+Section: web
+Architecture: all
+Depends: libjs-yui3-common, ${misc:Depends}
+Recommends: javascript-common
+Description: Yahoo User Interface Library v3 (debug files)
+ A collection of JavaScript and CSS resources that make it easier to build 
+ richly interactive applications in web browsers.
+ .
+ This package contains versions of the javascript files suitable for debugging.
+
+Package: libjs-yui3-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: libjs-yui3-debug (= ${binary:Version}), libjs-yui3-full (= ${binary:Version}), libjs-yui3-min (= ${binary:Version})
+Description: Documentation and examples for the Yahoo User Interface Library v3
+ This package contains documentation and over 150 examples for the Yahoo
+ User Interface JavaScript library version 3.
+ .
+ You will need to install libjs-yui3-debug, libjs-yui3-full, and libjs-yui3-min
+ in order to run the examples.
+
+Package: libjs-yui3-full
+Section: web
+Architecture: all
+Depends: libjs-yui3-common, ${misc:Depends}
+Recommends: javascript-common
+Description: Yahoo User Interface Library v3 (full, uncompressed files)
+ A collection of JavaScript and CSS resources that make it easier to build 
+ richly interactive applications in web browsers.
+ .
+ This package contains the full, unobfuscated or compressed, versions of the 
+ javascript files.
+
+Package: libjs-yui3-min
+Section: web
+Architecture: all
+Depends: libjs-yui3-common, ${misc:Depends}
+Recommends: javascript-common
+Description: Yahoo User Interface Library v3 (minified files)
+ A collection of JavaScript and CSS resources that make it easier to build 
+ richly interactive applications in web browsers.
+ .
+ This package contains versions of the javascript files which have been
+ minified for efficiency.

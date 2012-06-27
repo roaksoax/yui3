@@ -1,0 +1,49 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_install:
+	dh_install
+
+	# Adjusting file locations
+	find debian/libjs-yui3-doc/usr/share/doc/libjs-yui3-doc/examples -name "*.html" | \
+	xargs perl -pi -e 's#\Q../../../../assets\E#/javascript/yui3/assets#g;'
+
+	find debian/libjs-yui3-doc/usr/share/doc/libjs-yui3-doc/examples -name "*.html" | \
+	xargs perl -pi -e 's#\Q../../assets\E#/javascript/yui3/assets#g;'
+
+	find debian/libjs-yui3-doc/usr/share/doc/libjs-yui3-doc/examples -name "*.html" | \
+	xargs perl -pi -e 's#\Q../assets\E#/javascript/yui3/assets#g;'
+
+	find debian/libjs-yui3-doc/usr/share/doc/libjs-yui3-doc -name "*.html" | \
+	xargs perl -pi -e 's#\Q../../build\E#/javascript/yui3#g;'
+
+	find debian/libjs-yui3-doc/usr/share/doc/libjs-yui3-doc/examples -name "*.html" | \
+	xargs perl -pi -e 's#\Q../../api#/doc/libjs-yui3-doc\E#g;'
+
+	find debian/libjs-yui3-common/usr/share/javascript/yui3 -name "*.html" | \
+	xargs perl -pi -e 's#\Q../../../../assets\E#/javascript/yui3/assets#g;'
+
+	find debian/libjs-yui3-common/usr/share/javascript/yui3 -name "*.html" | \
+	xargs perl -pi -e 's#\Q../../build\E#/javascript/yui3#g;'
+
+	cd debian/libjs-yui3-common && for i in `find . -name "*-debug.js" -print`; do \
+	    install -D -m0644 "$$i" ../libjs-yui3-debug/"$$i" ; \
+	    rm -rf "$$i" ; \
+	done
+
+	cd debian/libjs-yui3-common && for i in `find . -name "*-min.js" -print`; do \
+	    install -D -m0644 "$$i" ../libjs-yui3-min/"$$i" ; \
+	    rm -rf "$$i" ; \
+	done
+
+	cd debian/libjs-yui3-common && for i in `find . -name "*.js" -print`; do \
+	    install -D -m0644 "$$i" ../libjs-yui3-full/"$$i" ; \
+	    rm -rf "$$i" ; \
+	done
+
+	cd debian/libjs-yui3-common && find . -type d -empty | xargs rmdir
+
+override_dh_compress:
+	dh_compress -i -X.js -X-js -X.json -X.php
