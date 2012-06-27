@@ -3,7 +3,7 @@ Section: web
 Priority: optional
 Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
 Uploaders: Jaldhar H. Vyas <jaldhar@debian.org>
-Build-Depends: debhelper (>= 7)
+Build-Depends: debhelper (>= 7.0.50~)
 Standards-Version: 3.9.3
 Homepage: http://developer.yahoo.com/yui/3/
 Vcs-Browser: http://git.debian.org/?p=pkg-javascript/yui3.git
